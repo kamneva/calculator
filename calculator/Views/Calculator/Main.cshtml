@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .center {
+            text-align: center;
+            padding: 10px;
+            margin: auto;
+            color: gray;
+        }
+
+    body { width: auto; height: auto; padding: 10px; margin: auto; background-image: url("https://i.pinimg.com/originals/ef/9d/1a/ef9d1a5386d76e1a202034b3c1e92117.png"); background-repeat: no-repeat; background-position-x: center; }
+    </style>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Главная</title>
+</head>
+<body>
+    <div class="center"><h1>Лабораторная работа №3</h1></div>
+    @using (Html.BeginForm("Calculator", "Calculator"))
+    {
+        <input type="submit" value="Калькулятор (10)" style="        width: 250px;
+        text-align: center;
+        height: 70px;
+        outline-color:white;
+        width: 400px;
+        font-family: 'Times New Roman';
+        margin-top: 5px;
+        font-weight: bold;
+        margin-left: 520px;
+        background-color: aliceblue;
+        color: gray;
+        font-size: 20pt">
+    }
+
+    @using (Html.BeginForm("Laba1", "Calculator"))
+    {
+        <input type="submit" value="Лабораторная №1" style="        width: 250px;
+        text-align: center;
+        height: 70px;
+        width: 400px;
+        outline-color: white;
+        margin-top: 5px;
+        font-weight: bold;
+        font-family: 'Times New Roman';
+        margin-left: 520px;
+        background-color: aliceblue;
+        color: gray;
+        font-size: 20pt">
+    }
+    @using (Html.BeginForm("Calculator2", "Calculator"))
+    {
+        <input type="submit" value="Калькулятор (2)" style="        width: 250px;
+        text-align: center;
+        height: 70px;
+        width: 400px;
+        outline-color: white;
+        font-family: 'Times New Roman';
+        margin-top: 5px;
+        font-weight: bold;
+        margin-left: 520px;
+        background-color: aliceblue;
+        color: gray;
+        font-size: 20pt">
+    }
+    @using (Html.BeginForm("Calculator3", "Calculator"))
+    {
+        <input type="submit" value="Калькулятор (11)" style="        width: 250px;
+        text-align: center;
+        height: 70px;
+        width: 400px;
+        outline-color: white;
+        font-weight: bold;
+        font-family: 'Times New Roman';
+        margin-top: 5px;
+        margin-left: 520px;
+        color: gray;
+        background-color: aliceblue;
+        height: 70px;
+        font-size: 20pt">
+    }
+</body>
+</html>

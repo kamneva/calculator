@@ -1,0 +1,140 @@
+﻿@{
+    Layout = null;
+}
+
+@using Laba3.Models
+@model string
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        .center {
+            text-align: center;
+            padding: 10px;
+            margin: auto;
+            color: gray;
+        }
+
+        .calc {
+            width: 400px;
+            padding: 10px;
+            margin: auto;
+        }
+
+    html, body { width: auto; height: auto; margin: auto; background-image: url("https://i.pinimg.com/originals/ef/9d/1a/ef9d1a5386d76e1a202034b3c1e92117.png"); background-repeat: no-repeat; background-position-x: center; background-size: cover; }
+
+        .but1 {
+            width: 100px;
+            height: 100px;
+            font-size: 50pt;
+            color: gray;
+            outline-color: white;
+            background-color: seashell;
+        }
+
+        .but2 {
+            width: 100px;
+            height: 100px;
+            font-size: 50pt;
+            color: gray;
+            outline-color: white;
+            background-color: lightpink;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Калькулятор</title>
+</head>
+<body>
+    <div class="center">
+        <h1> Калькулятор с двочиной системой счисления</h1>
+    </div>
+
+    <div class="calc">
+        <table>
+            <tr>
+                @using (Html.BeginForm("Calculate2", "Calculator"))
+                {
+                    <td><input type="text" value="@Model" id="ip" name="InputStr" style="width: 406px;height: 50px;font-size:25pt"></td>
+                    <td><input type="submit" value="=" style="width: 100px; height: 53px; font-size:25pt; color: white; background-color:lightblue;"></td>
+                }
+            </tr>
+        </table>
+
+        <table>
+
+            <tr>
+                <td><button onclick="Clean()" class="but2">AC</button></td>
+                <td><button onclick="" class="but2"></button></td>
+                <td><button onclick="" class="but2"></button></td>
+                <td><button onclick="Power()" class="but2">^</button></td>
+            </tr>
+
+            <tr>
+                <td><button onclick="Division()" class="but2">/</button></td>
+                <td><button onclick="Multiplication()" class="but2">*</button></td>
+                <td><button onclick="Substraction()" class="but2">-</button></td>
+                <td><button onclick="Addition()" class="but2">+</button></td>
+            </tr>
+
+            <tr>
+                <td><button onclick="Zero()" class="but1">0</button></td>
+                <td><button onclick="One()" class="but1">1</button></td>
+                <td><button onclick="" class="but1"></button></td>
+                <td>
+                    <div>
+                        @using (Html.BeginForm("Main", "Calculator"))
+                        {
+                            <input type="submit" value="Меню" style="width: 100px; height: 100px; font-size: 25pt; background-color:gray; color: white;">
+                        }
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function One()
+        {
+            var Value = document.getElementById("ip").value;
+            document.getElementById("ip").value = Value + 1;
+        }
+        function Zero()
+        {
+            var Value = document.getElementById("ip").value;
+            document.getElementById("ip").value = Value + 0;
+        }
+        function Addition()
+        {
+            var Value = document.getElementById("ip").value;
+            document.getElementById("ip").value = Value + "+";
+        }
+        function Substraction()
+        {
+            var Value = document.getElementById("ip").value;
+            document.getElementById("ip").value = Value + "-";
+        }
+        function Multiplication()
+        {
+            var Value = document.getElementById("ip").value;
+            document.getElementById("ip").value = Value + "*";
+        }
+        function Division()
+        {
+            var Value = document.getElementById("ip").value;
+            document.getElementById("ip").value = Value + "/";
+        }
+        function Power()
+        {
+            var Value = document.getElementById("ip").value;
+            document.getElementById("ip").value = Value + "^";
+        } 
+        function Clean()
+        {
+            document.getElementById("ip").value = "";
+        }</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+@using Laba3.Models
+@model string
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+
+        .calc {
+            width: 400px;     
+            margin: auto; 
+        }
+
+    html, body { width: auto; height: auto; margin: auto; background-image: url("https://i.pinimg.com/originals/ef/9d/1a/ef9d1a5386d76e1a202034b3c1e92117.png"); background-repeat: no-repeat; background-position-x: center; background-size: cover; }
+
+        .center {
+            text-align: center;
+            padding: 10px;
+            margin: auto;
+            color: gray;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Лабораторная1</title>
+</head>
+<body>
+    <div class="center"> <h1>Лабораторная работа №1</h1> </div>
+    <div class="calc">
+        <table>
+            <tr>
+                @using (Html.BeginForm("Laba1Calc", "Calculator"))
+                {
+                    <td><input type="text" value="@Model" id="ip" name="InputStr" style="width: 409px;height: 50px;font-size:25pt"></td>
+                    <td><input type="submit" value="=" style="width: 100px; height: 53px; font-size:25pt; color:white; background-color:lightblue;"></td>
+                }
+            </tr>
+        </table>
+        <div>
+            @using (Html.BeginForm("Main", "Calculator"))
+            {
+                <input type="submit" value="Меню" style="width: 100px; height: 50px; font-size: 25pt;color:white;background-color:gray;">
+            }
+        </div>
+    </div>
+</body>
+</html>
